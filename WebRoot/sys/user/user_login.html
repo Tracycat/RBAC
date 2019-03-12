@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>用户登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../../css/site.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script>
+		function show(o){     
+			//单击图片，重新获得src，random作用？      
+			yan = document.getElementById('shuaxin');
+			yan.src = "../../Kaptcha.jpg?"+Math.random();
+			//document.getElementById("verifyCode").value="";
+		}
+	</script> 
+  </head>
+	<body>
+		<div id="login-page" class="container">
+			<h1 style="text-align:center">用户登录</h1>
+			<form id="login-form" class="well" action="../../UserServlet" method="post">
+			<input type="hidden" name="choose" value="login"/><br/>
+				<input type="text" class="span2" placeholder="请输入用户名" name="user_name"/><br />
+				<input type="password" class="span2" placeholder="请输入密码" name="password"/><br />
+				<input type="text" class="span2" id="verifyCode" placeholder="请输入验证码" name="check"/><br />
+				<img src="../../Kaptcha.jpg" id="shuaxin" onclick="show(this)" /><a onclick="show(this)">看不清，换一张</a><br />
+				<button type="submit" class="btn btn-primary">登录</button>
+				<button type="button" class="btn" onclick="javascript:window.location.href='user_add.html'">注册</button>
+			</form>	
+		</div>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/site.js"></script>
+	</body>
+</html>

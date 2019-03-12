@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>用户注册</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="../../css/site.css" rel="stylesheet">
+	
+		<script language="javascript" src="../../js/jquery.min.js"></script>
+		<script language="javascript" src="../../js/bootstrap.min.js"></script>
+		<script language="javascript" src="../../js/site.js"></script>
+		<script language="javascript" src="../../js/checkinput.js"></script>
+	<script>
+		function show(){     
+			//单击图片，重新获得src，random作用？      
+			yan = document.getElementById('shuaxin');
+			yan.src = "../../Kaptcha.jpg?"+Math.random();
+			//document.getElementById("verifyCode").value="";
+		}
+	</script>
+  </head>
+  
+  <body>
+		<div class="container">
+			<div class="navbar">
+				
+			</div>
+			<div class="row" style="text-align:center">
+				
+				<div class="span9" style="margin-left:15%;margin-right:15%;">
+					<h1 style="text-align:center">
+						用户注册
+					</h1>
+					<form name="theForm" id="demo"  class="form-horizontal" enctype="multipart/form-data" action="../../UserServlet?choose=Useradd" method="post" onSubmit="return Validator.Validate(this,3)">
+						<fieldset>
+							
+							<div  class="control-group" style="text-align:left">
+								<div class="controls"  style="text-align:left">
+									<td><label  class="control-label" for="input01" >用户名：</label></td>
+									<input  type="text" class="input-xlarge" name="user_name" placeholder="请输入用户名" dataType="English" require="false" msg="只能使用英文"/>
+								</div>
+							</div>
+							<div  class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label  class="control-label" for="input01">密码：</label></td>
+									<input  type=password class="input-xlarge" dataType="SafeString" name="user_pw" placeholder="请输入密码" msg="只能使用6位以上英文、数字、下划线"/>
+								</div>
+							</div>
+							<div  class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label  class="control-label" for="input01">重复密码：</label>
+									<input  type="password" class="input-xlarge" dataType="Repeat" to="user_pw" name="Repeat" placeholder="请重复密码" msg="密码前后不一致"/></td>
+								</div>
+							</div>
+							<div  class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label  class="control-label" for="input01">真实姓名：</label>
+									<input  type="text" class="input-xlarge" dataType="Chinese" name="true_name" placeholder="请输入真实姓名" msg="只允许使用中文"/></td>
+								</div>
+							</div>
+							<div  class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label  class="control-label" for="input01">电话：</label>
+									<input  type="text" class="input-xlarge" require="false" dataType="Phone" name="user_phone" placeholder="请输入电话号码" msg="电话号码不正确"/></td>
+								</div>
+							</div>
+							<div class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label class="control-label" for="input01">部门ID：</label>
+									<input type="text" class="input-xlarge" name="dept_id" placeholder="请输入部门ID" /></td>
+								</div>
+							</div>
+							<div class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label class="control-label" for="input01">角色ID：</label>
+									<input type="text" class="input-xlarge" name="role_id" placeholder="请输入角色ID" /></td>
+								</div>
+							</div>
+							<div class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label class="control-label" for="fileInput">头像上传：</label>
+									<input class="input-file" name="logo_url" type="file" /></td>
+								</div>
+							</div>						
+							<div class="control-group" style="text-align:left">
+								<div class="controls">
+								<td><label class="control-label" for="textarea">请输入验证码：</label>
+									<input type="text"  class="input-xlarge" placeholder="请输入验证码" name="check"/><br /></td>
+								</div>
+							</div>
+								<div class="controls" >
+								<br />
+								<img src="../../Kaptcha.jpg" id="shuaxin" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a onclick="show()">看不清，换一张</a><br /></td>
+							</div>
+							
+												
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary">提交</button> <button class="btn" onclick="javascript:window.location.href='user_login.html'">返回</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
