@@ -11,6 +11,8 @@ public class DBUtil_VO
   public ResultSet rs = null;
   public String a="";
   public String a2="";
+  public String a3="";
+  public String a4="";
   
   
 }
