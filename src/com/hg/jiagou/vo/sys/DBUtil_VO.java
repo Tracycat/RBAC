@@ -10,6 +10,7 @@ public class DBUtil_VO
   public Statement st = null;
   public ResultSet rs = null;
   public String a="";
+  public String a2="";
   
   
 }
