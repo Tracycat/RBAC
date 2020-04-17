@@ -10,6 +10,8 @@ public class Vo4Dept
   private int role_id;
   private String role_name;
 
+  //a
+  
   public int getUser_id()
   {
     return this.user_id;

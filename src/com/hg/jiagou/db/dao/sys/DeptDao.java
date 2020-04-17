@@ -10,13 +10,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.log4j.Logger;
 
 public class DeptDao
 {
   private static DeptDao s = new DeptDao();
 
-  static Logger logger = Logger.getLogger(DeptDao.class.getName());
 
   public static DeptDao getDeptDao()
   {
@@ -39,7 +37,6 @@ public class DeptDao
         list.add(dto);
       }
     } catch (Exception ex) {
-      logger.error("1001--DeptDao.queryView()数据库sql语句错误", ex);
 
       throw new BaseException("系统异常1001", ex);
     } finally {
@@ -59,7 +56,6 @@ public class DeptDao
     catch (Exception ex)
     {
      
-      logger.error("1001--DeptDao.update()数据库sql语句错误", ex);
 
       throw new BaseException("系统异常1001", ex);
     }
@@ -79,7 +75,6 @@ public class DeptDao
         count = dbvo.rs.getInt(1);
     }
     catch (Exception ex) {
-      logger.error("1001--DeptDao.queryCount()数据库sql语句错误", ex);
 
       throw new BaseException("系统异常1001", ex);
     } finally {
@@ -108,7 +103,6 @@ public class DeptDao
         list.add(dto);
       }
     } catch (Exception ex) {
-      logger.error("1001--DeptDao.queryIndex()数据库sql语句错误", ex);
 
       throw new BaseException("系统异常1001", ex);
     } finally {
