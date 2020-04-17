@@ -9,6 +9,7 @@ public class DBUtil_VO
   public Connection conn = null;
   public Statement st = null;
   public ResultSet rs = null;
+  public String a="";
   
   
 }
